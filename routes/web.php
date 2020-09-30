@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::get('/about', function () {
         'articles' => App\Models\Article::take(3)->latest()->get()
     ]);
 });
+
+Route::get('/articles/{article}', [ArticlesController::class, 'show']);

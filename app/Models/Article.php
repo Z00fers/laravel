@@ -9,4 +9,9 @@ class Article extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function path()
+    {
+        return route('article.show', $this);
+    }
 }

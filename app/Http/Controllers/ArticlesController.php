@@ -26,7 +26,7 @@ class ArticlesController extends Controller
     public function store()
     {
         Article::create($this->validateArticle());
-        return redirect('/articles');
+        return redirect(route('article.index'));
     }
 
     public function edit(Article $article)
@@ -37,7 +37,7 @@ class ArticlesController extends Controller
     public function update(Article $article)
     {
         Article::create($this->validateArticle());
-        return redirect('/articles/' . $article->id);
+        return redirect($article->path());
     }
 
     public function destroy()
